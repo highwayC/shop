@@ -1,0 +1,100 @@
+@color-brand: #ff6140;
+@color-brand-light: #ff8970;
+@color-brand-dark: #cc4e33;
+
+.at-button {
+  height: 54px;
+  line-height: 54px;
+  padding: 0 30px;
+  margin: 0;
+  font-size: 26px;
+}
+
+.app-product__page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+} 
+.app-product__card {
+    display: flex;
+    padding: 26px 20px;
+    background-color: #fff;
+
+    &:not(:last-child) {
+    border-bottom: 1px solid #e6e6e6;
+    }
+}
+
+.app-product__img-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+
+    image {
+    width: 100%;
+    height: 100%;
+    }
+}
+
+.app-product__cont-wrap {
+    flex: 1;
+}
+
+.app-product__info-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.app-product__info-text {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    margin-top: 10px;
+}
+
+.app-product__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    .price {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgba(255, 0, 0, 1);
+    }
+
+    .vip-price {
+    display: flex;
+    font-size: 24px;
+    color: #ffae00;
+    font-weight: 300;
+    margin-left: 4px;
+    align-items: center;
+
+    .iconVip {
+        display: inline-block;
+        margin-left: 8px;
+        width: 50px;
+        height: 20px;
+        background-size: 100%;
+        background-image: url('../../assets/images/icon/icon-vip.png');
+    }
+    }
+}
+
+.app-product__bottom-left {
+    flex: 1;
+    display: flex;
+    color: #ff2c00;
+    align-items: flex-end;
+}
+
+.app-product__action-wrap {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

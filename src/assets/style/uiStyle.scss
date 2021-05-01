@@ -1,0 +1,3 @@
+// 兼容性问题 下载taro-ui时要下载taro-ui@next
+// 并且不能直接在.tsx文件中引入这个文件，需要包装一下
+@import '~taro-ui/dist/style/index.scss';
