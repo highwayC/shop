@@ -66,9 +66,10 @@ class ProductStore implements IProductStore {
             lists: [
                 {
                     price: 2500, // 商口单价，单位分
+                    vip_price: 1990, // 商口单价，单位分
                     status: 1, // 状态， 1：已上架 2：已下架
                     sub_title: 'Milk Tea Series: Green Milk Tea', // 子标题
-                    thumb: 'https://www.leidenglai.com/image/weapp/server/product.jpg',
+                    thumb: 'https://img.ivsky.com/img/tupian/li/202010/15/granada-013.jpg',
                     title: '小山绿奶茶', // 标题
                     product_id: 1 // 商品ID
                 },
@@ -77,7 +78,7 @@ class ProductStore implements IProductStore {
                     vip_price: 20000, // 商口单价，单位分
                     status: 2, // 状态， 1：已上架 2：已下架
                     sub_title: 'Mellow Latte: Royal No.9 Latte', // 子标题
-                    thumb: 'https://www.leidenglai.com/image/weapp/server/product.jpg',
+                    thumb: 'https://img.ivsky.com/img/tupian/li/202010/15/feiji-005.jpg',
                     title: '皇家九号拿铁', // 标题
                     product_id: 2 // 商品ID
                 }
@@ -116,16 +117,18 @@ class ProductStore implements IProductStore {
     @observable.ref productDetailData: any = {product_id: 0}
 
     @action
-    async fetchProductDetail(productId) {
+    fetchProductDetail = async (productId) => {
         // 获取后端数据
         const resData = await shopService.fetchProductDetail({product_id: productId})
 
         // 获取富文本
         const resContentData = await shopService.fetchProductDesc({product_id: productId})
+        console.log(resData, resContentData)
 
         runInAction(() => {
             // 细粒度的控制observable
             this.productDetailData = decorate(Object.assign(resData, resContentData), {stock_lists: observable})
+            // console.log('8888',this.productDetailData)
         })
     }
 
@@ -148,6 +151,7 @@ class ProductStore implements IProductStore {
 
         const stock_lists = this.productDetailData.stock_lists as IProductDetail['stock_lists']
         const index = stock_lists.findIndex(item => item.product_sku === sku)
+        // console.log(this.productDetailData, this.productDetailDatastock_lists, sku, index)
 
         runInAction(() => {
             this.productDetailData.stock_lists[index].number = stock

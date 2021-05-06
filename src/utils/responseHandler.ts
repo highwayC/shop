@@ -28,6 +28,6 @@ export default function responseHandler(response) {
         }
 
         // 正常
-        resolve(response.data.response_data)
+        resolve(response.data)
     })
 }

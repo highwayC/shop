@@ -2,7 +2,7 @@
 export let SERVER_PROTOCOL = 'http://'
 
 /** 后端 API 地址 */
-export const SERVER_API_ROOT_API = 'localhost:3002'
+export const SERVER_API_ROOT_API = 'localhost:3002/'
 
 /** 请求默认参数 */
 export const DEF_REQUEST_CONFIG = { access_token: '' // 用户登录获取，未登录状态不用传。本地存储 key为 access_token

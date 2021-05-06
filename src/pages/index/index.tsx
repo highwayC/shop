@@ -1,8 +1,10 @@
 import { Component } from 'react'
-import { View, Text, Navigator} from '@tarojs/components'
+import { View, Text} from '@tarojs/components'
 import Taro from '@tarojs/taro'
+import wrapUserAuth from '@/components/HOC/wrapUserAuth'
 import './index.less'
 
+@wrapUserAuth
 export default class Index extends Component {
 //  componentWillMount => componentDidMount => onLoad => componentDidShow => onReady
 // onready 阶段才可使用createSelectorQuery访问dom节点

@@ -39,7 +39,7 @@ class ShopService {
             content: string
         }>({
             method: 'GET',
-            api: 'product/get_content/detail',
+            api: 'product/get_content_detail',
             params
         })
     }
@@ -72,7 +72,7 @@ class ShopService {
     /**
      * 获取历史订单列表
      */
-    fetchHistoryList(params: {page: number, num: number}) {
+    fetchHisOrderList(params: {page: number, num: number}) {
         return requestData<{
             count: Number;
             lists: IOrderDetail[]
@@ -86,10 +86,21 @@ class ShopService {
     /**
      * 取消订单
      */
-    fetchCancel(params: {order_number: string}) {
+    fetchCancelOrder(params: {order_number: string}) {
         return requestData({
             method: 'POST',
-            api: 'order/receipt_order',
+            api: 'order/cancel_payment_order',
+            params
+        })
+    }
+
+    /**
+     * 接单
+     */
+    fetchConfirmOrder(params: {order_number: string}) {
+        return requestData({
+            method: "POST",
+            api: "order/receipt_order",
             params
         })
     }

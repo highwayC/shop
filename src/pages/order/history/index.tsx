@@ -1,10 +1,10 @@
 import { Component } from 'react'
 import {View, Text} from '@tarojs/components'
 
-export default class index extends Component {
+export default class History extends Component {
     render() {
         return (
-            <View>history+++++</View>
+            <View>kkkkkkkk</View>
         )
     }
 }
